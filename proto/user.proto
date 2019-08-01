@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package rpc;
+
+message Register {
+    string mobile = 1;
+    string validCode = 2;
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+    string password = 3;
+    string mobile = 4;
+}
+
+message UserDto {
+    string id = 1;
+    string name = 2;
+    string mobile = 5;
+}
+
+service UserService {
+    //用户注册
+    rpc Registry (Register) returns (UserDto) {}
+}
